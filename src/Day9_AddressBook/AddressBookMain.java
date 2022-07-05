@@ -2,12 +2,13 @@ package Day9_AddressBook;
 import java.util.Scanner;
 
 public class AddressBookMain {
-    public static void main(String[] args) {
+    public void Address() {
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("******* New Contact *******");
         System.out.print("First Name    : ");
-       String first_name = scanner.nextLine();
+        String first_name = scanner.nextLine();
         System.out.print("Last Name     : ");
         String last_name = scanner.nextLine();
         System.out.print("Address       : ");
