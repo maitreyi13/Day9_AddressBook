@@ -1,6 +1,6 @@
 package Day9_AddressBook;
 public class Contacts {
-    private String first_name;
+        String first_name;
         String last_name;
         String address;
         String city;
@@ -9,7 +9,7 @@ public class Contacts {
         String phone;
         String email;
 
-        public String getFirstName() {
+    public String getFirstName() {
         return first_name;
     }
     public void setFirstName(String first_name) {
@@ -56,5 +56,18 @@ public class Contacts {
     }
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact :" +
+                "\nFirst Name    : " + first_name  +
+                ",\nLast Name     : " + last_name  +
+                ",\nAddress       : " + address +
+                ",\nCity          : " + city  +
+                ",\nState         : " + state +
+                ",\nZip Code      : " + zip +
+                ",\nPhone Number  : " + phone  +
+                ",\nEmail         : " + email;
     }
 }
