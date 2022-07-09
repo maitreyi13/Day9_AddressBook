@@ -50,12 +50,13 @@ public class Contacts {
     public void setAddress(String address) {
         this.address = address;
     }
+    //to string
 
     @Override
     public String toString() {
         return "Contact :" +
-                "\nFirst Name    : " + first_name  +
-                ",\nLast Name     : " + last_name  +
+                "\nFirst Name    : " + first_name +
+                ",\nLast Name     : " + last_name +
                 ",\nAddress       : " + address +
                 ",\nCity          : " + city  +
                 ",\nState         : " + state +
