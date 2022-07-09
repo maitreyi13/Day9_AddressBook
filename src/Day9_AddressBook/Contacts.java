@@ -1,13 +1,6 @@
 package Day9_AddressBook;
 public class Contacts {
-        String first_name;
-        String last_name;
-        String address;
-        String city;
-        String state;
-        String zip;
-        String phone;
-        String email;
+        String first_name ,last_name, address, city,state,zip,phone,email;
 
     public String getFirstName() {
         return first_name;
@@ -57,12 +50,13 @@ public class Contacts {
     public void setAddress(String address) {
         this.address = address;
     }
+    //to string
 
     @Override
     public String toString() {
         return "Contact :" +
-                "\nFirst Name    : " + first_name  +
-                ",\nLast Name     : " + last_name  +
+                "\nFirst Name    : " + first_name +
+                ",\nLast Name     : " + last_name +
                 ",\nAddress       : " + address +
                 ",\nCity          : " + city  +
                 ",\nState         : " + state +
