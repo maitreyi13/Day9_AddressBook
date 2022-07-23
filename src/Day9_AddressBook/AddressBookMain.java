@@ -16,6 +16,7 @@ public class AddressBookMain {
         System.out.println("******* New Contact *******");
         System.out.print("First Name    : ");
         contact.setFirstName(scanner.next());
+        duplicasy(contact.getFirstName());
         System.out.print("Last Name     : ");
         contact.setLastName(scanner.next());
         System.out.print("Address       : ");
@@ -33,7 +34,6 @@ public class AddressBookMain {
         ContactsArrayList.add(contact);
 //        System.out.println(ContactsArrayList);
     }
-
     public void editContact() {
 
         System.out.println("Enter the first name of the contact you want to edit: ");
@@ -78,6 +78,15 @@ public class AddressBookMain {
             }
         }
     }
+    public void duplicasy(String firstName){
+        for (Contacts contacts : ContactsArrayList) {
+            String contactName = contacts.getFirstName();
+            if (firstName.equals(contactName)) {
+                System.out.println("This Person is Already Present");
+                Address();
+            }
+        }
+    }
     public void display(){
         System.out.println(ContactsArrayList);
     }
@@ -105,25 +114,15 @@ public class AddressBookMain {
                         int choose1 = scanner.nextInt();
 
                         switch (choose1) {
-                            case 1:
-                                details.Address();
-                                break;
-                            case 2:
-                                details.editContact();
-                                break;
-                            case 3:
-                                details.deleteContact();
-                                break;
-                            case 4:
-                                details.display();
-                                break;
-                            case 5:
+                            case 1 -> details.Address();
+                            case 2 -> details.editContact();
+                            case 3 -> details.deleteContact();
+                            case 4 -> details.display();
+                            case 5 -> {
                                 System.out.println("Thank You!");
                                 k = false;
-                                break;
-                            default:
-                                System.out.println("Choose valid option");
-                                break;
+                            }
+                            default -> System.out.println("Choose valid option");
                         }
                         hashmap.put(address_name, ContactsArrayList);
 //                        System.out.println(hashmap);
@@ -143,25 +142,15 @@ public class AddressBookMain {
                             int choose1 = scanner.nextInt();
 
                             switch (choose1) {
-                                case 1:
-                                    details.Address();
-                                    break;
-                                case 2:
-                                    details.editContact();
-                                    break;
-                                case 3:
-                                    details.deleteContact();
-                                    break;
-                                case 4:
-                                    details.display();
-                                    break;
-                                case 5:
+                                case 1 -> details.Address();
+                                case 2 -> details.editContact();
+                                case 3 -> details.deleteContact();
+                                case 4 -> details.display();
+                                case 5 -> {
                                     System.out.println("Thank you!");
                                     j = false;
-                                    break;
-                                default:
-                                    System.out.println("Choose valid option");
-                                    break;
+                                }
+                                default -> System.out.println("Choose valid option");
                             }
                             hashmap.put(address_name_old, ContactsArrayList);
                             System.out.println(hashmap);
