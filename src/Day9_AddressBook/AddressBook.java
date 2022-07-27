@@ -31,15 +31,15 @@ public class AddressBook {
                 .collect(Collectors.toList());
     }
     public static void viewByName(Map<String, Contacts> nameHashMap) {
-        nameHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
+        nameHashMap.forEach((key, value) -> System.out.println(key + "=" + value.toString()));
     }
 
     public static void viewByCity(Map<String, Contacts> cityHashMap) {
-        cityHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
+        cityHashMap.forEach((key, value) -> System.out.println(key + "=" + value.toString()));
     }
 
     public static void viewByState(Map<String, Contacts> stateHashMap) {
-        stateHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
+        stateHashMap.forEach((key, value) -> System.out.println(key + "=" + value.toString()));
     }
 
     public void editContact(Contacts current, Contacts edit) {
@@ -204,6 +204,31 @@ public class AddressBook {
                 return;
             default:
                 System.out.println("INVALID CHOICE!");
+        }
+    }
+    public void countByOption() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("1. Count City ");
+        System.out.println("2. Count State");
+        System.out.println("3. Back ");
+        System.out.println("Enter Your Choice : ");
+        int choice = sc.nextInt();
+        sc.nextLine();
+        switch (choice) {
+            case 1:
+                Map<String, Long> countCity = contactList.stream()
+                        .collect(Collectors.groupingBy(Contacts::getCity, Collectors.counting()));
+                System.out.println(countCity + "\n");
+                break;
+            case 2:
+                Map<String, Long> countState = contactList.stream()
+                        .collect(Collectors.groupingBy(Contacts::getState, Collectors.counting()));
+                System.out.println(countState + "\n");
+                break;
+            case 3:
+                return;
+            default:
+                System.out.println("Invalid Option");
         }
     }
 }

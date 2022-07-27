@@ -42,6 +42,9 @@ public class AddressBookMain {
                     AddressBook.viewByOption();
                     break;
                 case 6:
+                    addressBook.countByOption();
+                    break;
+                case 7:
                     sc.close();
                     return;
                 default:
