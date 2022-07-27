@@ -77,6 +77,7 @@ class Contacts {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
     public String toString() {
         return ("First name: " + firstName + " Last name: " + lastName + " Address: " + address + " city: " + city
                 + " state: " + state + " email: " + email + " zip: " + zip + " phone number:" + phoneNumber + "");

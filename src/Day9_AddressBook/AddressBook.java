@@ -31,15 +31,15 @@ public class AddressBook {
                 .collect(Collectors.toList());
     }
     public static void viewByName(Map<String, Contacts> nameHashMap) {
-        nameHashMap.forEach((key, value) -> System.out.println(key + "=" + value.toString()));
+        nameHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
     }
 
     public static void viewByCity(Map<String, Contacts> cityHashMap) {
-        cityHashMap.forEach((key, value) -> System.out.println(key + "=" + value.toString()));
+        cityHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
     }
 
     public static void viewByState(Map<String, Contacts> stateHashMap) {
-        stateHashMap.forEach((key, value) -> System.out.println(key + "=" + value.toString()));
+        stateHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
     }
 
     public void editContact(Contacts current, Contacts edit) {
@@ -181,7 +181,6 @@ public class AddressBook {
                 System.out.println("INVALID CHOICE!");
         }
     }
-    // method for view element by option
     public static void viewByOption() {
         Scanner sc = new Scanner(System.in);
         System.out.println("1. View By name");
